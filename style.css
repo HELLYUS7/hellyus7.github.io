@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap');
+
+:root{
+    --main-bg-color: #4A4E69;
+    --main-header-font-color: #F2E9E4;
+    --secondary-color: #000000;
+    --tertiary-color: #C9ADA7;
+    --scroll-bar-color: #4A4E69;
+    --gradient-background-aprsentation: #a51185;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #101010;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-bar-color);
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.4s;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 0.1s;
+}
+
+.show {
+    opacity: 1;
+    animation: showElement 1s forwards;
+    transition: all 3s;
+}
+
+@keyframes showElement {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.full-size {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-text {
+    text-indent: 40px;
+}
+
+.bg-primary {
+    background-color: #df2935;
+}
+
+.bg-secondary {
+    background-color: #fdca40;
+}
+
+.bg-tertiary {
+    background-color: #136f63;
+}
+
+.bg-pink {
+    /*#272789*/
+    color: #d704aa;
+    font-weight: bold;
+}
+
+.box-flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+.header {
+    z-index: 100;
+    top: 0;
+    position: sticky;
+    background-color: var(--secondary-color);
+    color: var(--main-header-font-color);
+    width: 100vw;
+    height: 80px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.header h1 {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.nav-header ul{
+    flex-wrap: wrap;
+    font-size: 20px;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-header ul li:hover {
+    padding: 10px;
+    border-color: white;
+    border-bottom-style: solid;
+    cursor: pointer;
+}
+
+
+.section-apresentation {
+    overflow-x: hidden;
+    z-index: -10;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+    justify-content: center;
+    height: 550px;
+    background: rgb(201,173,167);
+    background: linear-gradient(0deg, var(--gradient-background-aprsentation) -100%, transparent 90%);
+}
+
+.section-apresentation::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top, #280003, transparent);
+    z-index: 90;
+}
+
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -11;
+}
+  
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkling 3s infinite;
+}
+  
+@keyframes twinkling {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+.commet {
+    transform: rotate(-171deg);
+    top: 40px;
+    left: -70px;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: -10;
+    box-shadow: 0 0 16px 3px rgba(255, 255, 255, 0.459), 0 0 35px 15px rgba(255, 255, 255, 0.5);
+}
+
+.commet-animated {
+    animation: commet-animation 1.3s forwards;
+}
+
+@keyframes commet-animation {
+    from {
+        left: -60px;
+        top: 40px;
+    }
+    to {
+        top: 90%;
+        left: 200%;
+    }
+}
+
+.commet .track {
+    top: 15%;
+    left: 50%;
+    position: absolute;
+    width: 5000%;
+    height: 75%;
+    z-index: 100;
+    background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.section-apresentation .moon {
+    z-index: -10;
+    bottom: 0;
+    right: 120px;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 150px;
+    background: #e7e7e7;
+    box-shadow: 0px 0px 20px white,0px 0px 70px #ffffff;
+}
+
+.moonAnimed {
+    animation: moonAnimated 5s ease-in-out forwards;
+}
+
+@keyframes moonAnimated {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(-560%);
+    }
+}
+
+.section-apresentation img {
+    object-fit: cover;
+    z-index: -10;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.section-apresentation #ground-images {
+    background-color: #2d0a0d;
+    object-fit: cover;
+    z-index: -10;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.section-apresentation .apresentation-title {
+   z-index: 2;
+   justify-content: start;
+   width: 300px;
+}
+
+.section-apresentation .apresentation-title h1 {
+    text-align: left;
+    font-size: 100px;
+    width: 100%;
+    color: var(--main-header-font-color);
+}
+
+.section-apresentation .apresentation-title h3 {
+    text-align: left;
+    font-size: 30px;
+    color: var(--main-header-font-color);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+.section-apresentation .mac-window {
+    opacity: 1;
+    z-index: 2;
+    border-radius: 16px;
+    background-color: transparent;
+    width: 400px;
+    height: 280px;
+    justify-content: center;
+}
+
+.section-apresentation .mac-window .window-top {
+    height: 14%;
+}
+
+.section-apresentation .mac-window hr {
+    width: 100%;
+    border-style: solid;
+    border-color: var(--main-header-font-color);
+}
+
+.section-apresentation .mac-window .window-top {
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    background: rgb(66,33,139);
+    background: linear-gradient(45deg, rgba(66,33,139,1) 0%, rgba(168,98,254,1) 100%);
+    justify-content: start;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.section-apresentation .mac-window .window-top .window-func {
+    width: min-content;
+    gap: 8px;
+}
+
+.section-apresentation .mac-window .window-top .window-func .func-circle {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+}
+
+.section-apresentation .mac-window .code {
+    background-color: #101010c5;
+    border-radius: 10px;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    font-weight: bold;
+    padding: 10px;
+    color: var(--main-header-font-color);
+    font-size: 17px;
+    gap: 10px;
+    align-items: start;
+    text-align: start;
+    width: 100%;
+}
+
+#section-background-black {
+    justify-content: start;
+    height: min-content;
+    background-color: rgba(3,0,7,1);
+}
+
+#section-myApresentation {
+    background-image: url(assets/images/bilu.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: end;
+    width: 100vw;
+    height: 1000px;
+    color: white;
+    position: relative;
+}
+
+#section-myApresentation #my-apresentation {
+    width: 100%;
+    height: 600px;
+    padding: 10px;
+    border-top-color: gray;
+    color: var(--tertiary-color);
+    justify-content: start;
+}
+
+#section-myApresentation #my-apresentation #text {
+    width: 100%;
+    height: 100%;
+    text-align: start;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+#section-myApresentation #my-apresentation #text h1 {
+    font-size: 60px;
+    text-align: start;
+}
+
+#section-myApresentation #my-apresentation #text p {
+    width: 500px;
+    font-size: 24px;
+}
+
+.box {
+    position: relative;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+}
+
+
+#section-myKnowledge {
+    background: rgb(3,0,7);
+    background: linear-gradient(180deg,rgba(3,0,7,1) 0%, rgba(22,0,16,1) 100%);
+    height: 700px;
+    width: 100vw;
+}
+
+@media screen and (max-width: 700px) {
+    .section-apresentation {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+    }
+    .section-apresentation #moon {
+        width: 50px;
+        height: 50px;
+        right: 20px;
+    }
+    .header {
+        display: none;
+    }
+    .section-apresentation .mac-window {
+        width: 97vw;
+    }
+    #section-myApresentation #my-apresentation #text h1 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #section-myApresentation {
+        background-image: none;
+        background: rgb(3,0,7);
+        background: linear-gradient(0deg, rgba(3,0,7,1) 0%, rgba(40,0,3,1) 100%);
+    }
+}
